@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeetBud Settings</title>
+  <style>
+    body {
+      width: 350px;
+      min-height: 200px;
+      margin: 0;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fa;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #2c3e50;
+      font-size: 14px;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid #e1e5e9;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border-color 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    .provider-select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid #e1e5e9;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .provider-select:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    .model-select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid #e1e5e9;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    .model-select:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    .btn:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+
+    .status {
+      margin-top: 12px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .status.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .status.info {
+      background: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+
+    .info {
+      margin-top: 16px;
+      padding: 12px;
+      background: #e7f3ff;
+      border: 1px solid #b3d9ff;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #004085;
+    }
+
+    .info h4 {
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .info p {
+      margin: 0 0 6px 0;
+    }
+
+    .info p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .info a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>💡 LeetBud</h1>
+  </div>
+
+  <div class="form-group">
+    <label for="provider">AI Provider:</label>
+    <select id="provider" class="provider-select">
+      <option value="openrouter">OpenRouter (Multi-Provider)</option>
+      <option value="openai">OpenAI</option>
+      <option value="claude">Claude (Anthropic)</option>
+      <option value="gemini">Gemini (Google)</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="model">AI Model:</label>
+    <select id="model" class="model-select">
+      <option value="openai/gpt-4o">GPT-4o (Latest Available)</option>
+      <option value="openai/gpt-4o-mini">GPT-4o Mini (Fast)</option>
+      <option value="openai/gpt-4-turbo">GPT-4 Turbo</option>
+      <option value="openai/gpt-4">GPT-4</option>
+      <option value="openai/gpt-3.5-turbo">GPT-3.5 Turbo</option>
+      <option value="anthropic/claude-3-5-sonnet-20241022">Claude 3.5 Sonnet (Latest Available)</option>
+      <option value="anthropic/claude-3-opus-20240229">Claude 3 Opus (Most Powerful)</option>
+      <option value="anthropic/claude-3-sonnet-20240229">Claude 3 Sonnet</option>
+      <option value="anthropic/claude-3-haiku-20240307">Claude 3 Haiku (Fastest)</option>
+      <option value="google/gemini-1.5-pro">Gemini 1.5 Pro (Latest Available)</option>
+      <option value="google/gemini-1.5-flash">Gemini 1.5 Flash (Fast)</option>
+      <option value="google/gemini-1.0-pro">Gemini 1.0 Pro</option>
+      <option value="deepseek/deepseek-r1">DeepSeek R1 (671B - Reasoning)</option>
+      <option value="deepseek/deepseek-v3.1">DeepSeek V3.1 (Latest - Aug 2025)</option>
+      <option value="x-ai/grok-4">Grok 4 (256k Context)</option>
+      <option value="mistralai/mistral-devstral-small-2507">Mistral Devstral Small (24B - Coding)</option>
+      <option value="mistralai/mistral-devstral-medium-2507">Mistral Devstral Medium (Coding)</option>
+      <option value="qwen/qwen3-max-preview">Qwen3 Max Preview (Latest - Sep 2025)</option>
+      <option value="meta-llama/llama-3.1-405b-instruct">Llama 3.1 405B Instruct</option>
+      <option value="meta-llama/llama-3.1-70b-instruct">Llama 3.1 70B Instruct</option>
+      <option value="meta-llama/llama-3.1-8b-instruct">Llama 3.1 8B Instruct</option>
+      <option value="openchat/openchat-3.5-0106">OpenChat 3.5 (Fast & Helpful)</option>
+      <option value="nousresearch/nous-capybara-7b">Nous Capybara 7B (Conversational)</option>
+      <option value="gryphe/mythomax-l2-13b">Gryphe Mythomax L2 13B (Creative)</option>
+      <option value="mistralai/mixtral-8x7b-instruct">Mixtral 8x7B (Free & Smart)</option>
+      <option value="openrouter/auto">OpenRouter Auto (Best Free Model)</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="apiKey">API Key:</label>
+    <input type="password" id="apiKey" placeholder="Enter your API key">
+  </div>
+
+  <button class="btn" id="saveBtn">Save Settings</button>
+  
+  <button class="btn" id="testBtn" style="margin-top: 8px; background: #28a745;">Test API Connection</button>
+
+  <div id="status"></div>
+
+  <div class="info" id="providerInfo">
+    <h4>How to get your API key:</h4>
+    <div id="providerInstructions">
+      <p>1. Visit <a href="https://openrouter.ai/" target="_blank">OpenRouter.ai</a></p>
+      <p>2. Sign up for an account</p>
+      <p>3. Go to your API keys section</p>
+      <p>4. Create a new API key and paste it here</p>
+    </div>
+  </div>
+
+  <div class="info">
+    <h4>How it works:</h4>
+    <p>• Start typing your solution on LeetCode</p>
+    <p>• Stop typing for 4 seconds</p>
+    <p>• A glowing bulb 💡 will appear</p>
+    <p>• Click it to get AI-powered hints!</p>
+  </div>
+
+  <div class="footer">
+    LeetBud v1.0.0 - AI-powered LeetCode hints
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
