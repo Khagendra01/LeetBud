@@ -2,51 +2,16 @@
 
 A Chrome extension that provides AI-powered hints for LeetCode problems. When you stop typing for 4 seconds, a glowing bulb appears that you can click to get intelligent hints about your solution.
 
-## Features
-
-- 🤖 **AI-Powered Hints**: Uses OpenRouter API to provide intelligent suggestions
-- ⏱️ **Smart Timing**: Appears after 4 seconds of inactivity
-- 💡 **Visual Indicator**: Glowing bulb that's easy to spot
-- 🎯 **Context-Aware**: Analyzes your current code and the problem description
-- 🔒 **Secure**: API key stored locally in Chrome storage
-- 📱 **Responsive**: Works on different screen sizes
-
 ## Installation
 
-### Method 1: Load as Unpacked Extension (Development)
+### Load as Unpacked Extension (Development)
 
-1. **Download the extension files** to a folder on your computer
+1. Clone this Repository
 2. **Open Chrome** and go to `chrome://extensions/`
 3. **Enable Developer mode** (toggle in the top right)
-4. **Click "Load unpacked"** and select the folder containing the extension files
+4. **Click "Load unpacked"** and select the folder you cloned into, the entire main folder
 5. **Pin the extension** to your toolbar for easy access
 
-### Method 2: Package and Install
-
-1. **Package the extension**:
-   - Go to `chrome://extensions/`
-   - Enable Developer mode
-   - Click "Pack extension"
-   - Select the extension folder
-   - This will create a `.crx` file
-
-2. **Install the packaged extension**:
-   - Drag the `.crx` file to the Chrome extensions page
-   - Confirm the installation
-
-## Setup
-
-1. **Get an OpenRouter API Key**:
-   - Visit [OpenRouter.ai](https://openrouter.ai/)
-   - Sign up for an account
-   - Go to your API keys section
-   - Create a new API key
-
-2. **Configure the Extension**:
-   - Click the LeetBud icon in your Chrome toolbar
-   - Paste your API key in the settings popup
-   - Click "Save API Key"
-   - Optionally test your API key
 
 ## How to Use
 
@@ -64,22 +29,6 @@ A Chrome extension that provides AI-powered hints for LeetCode problems. When yo
 3. **Extracts Context**: Gathers the problem title, description, and your current code
 4. **Calls AI**: Sends this information to OpenRouter's API for analysis
 5. **Shows Hint**: Displays a helpful suggestion about your next steps
-
-## File Structure
-
-```
-leetbud/
-├── manifest.json          # Extension configuration
-├── content.js            # Main script that runs on LeetCode pages
-├── styles.css            # Styling for the bulb and popup
-├── popup.html            # Settings page HTML
-├── popup.js              # Settings page JavaScript
-├── icons/                # Extension icons
-│   ├── icon16.png
-│   ├── icon48.png
-│   └── icon128.png
-└── README.md             # This file
-```
 
 ## Privacy & Security
 
